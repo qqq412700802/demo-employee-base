@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.io.Serializable;
 
@@ -19,6 +20,7 @@ import java.io.Serializable;
  * @since 2021-05-13
  */
 @Service
+@RestController
 @RequestMapping("/demo-employee-base/company")
 public class CompanyServiceImpl implements CompanyService<CompanyEntity> {
 
@@ -26,17 +28,20 @@ public class CompanyServiceImpl implements CompanyService<CompanyEntity> {
     private CompanyMapper companyMapper;
 
     @Override
+    @GetMapping("save")
     public int save(CompanyEntity entity) {
         companyMapper.insert(entity);
         return entity.getId();
     }
 
     @Override
+    @GetMapping("removeById")
     public int removeById(Serializable id) {
         return companyMapper.deleteById(id);
     }
 
     @Override
+    @GetMapping("updateById")
     public int updateById(CompanyEntity entity) {
         return companyMapper.updateById(entity);
     }
@@ -44,9 +49,7 @@ public class CompanyServiceImpl implements CompanyService<CompanyEntity> {
     @Override
     @GetMapping("getById")
     public CompanyEntity getById(@RequestParam Integer id) {
-        System.out.println(id);
         id = 1;
-        System.out.println(companyMapper.selectList(null));
         return companyMapper.selectById(id);
     }
 }

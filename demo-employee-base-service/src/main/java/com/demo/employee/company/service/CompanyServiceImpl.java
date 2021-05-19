@@ -4,12 +4,10 @@ import com.demo.employee.company.entity.CompanyEntity;
 import com.demo.employee.company.mapper.CompanyMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * <p>
@@ -28,28 +26,34 @@ public class CompanyServiceImpl implements CompanyService<CompanyEntity> {
     private CompanyMapper companyMapper;
 
     @Override
-    @GetMapping("save")
+    @PostMapping("save")
     public int save(CompanyEntity entity) {
+        System.out.println(entity);
         companyMapper.insert(entity);
         return entity.getId();
     }
 
     @Override
-    @GetMapping("removeById")
-    public int removeById(Serializable id) {
+    @PostMapping("removeById")
+    public int removeById(@RequestBody Serializable id) {
         return companyMapper.deleteById(id);
     }
 
     @Override
-    @GetMapping("updateById")
-    public int updateById(CompanyEntity entity) {
+    @PostMapping("updateById")
+    public int updateById(@RequestBody  CompanyEntity entity) {
         return companyMapper.updateById(entity);
     }
 
     @Override
     @GetMapping("getById")
     public CompanyEntity getById(@RequestParam Integer id) {
-        id = 1;
         return companyMapper.selectById(id);
+    }
+
+    @Override
+    @GetMapping("getList")
+    public List<CompanyEntity> getList() {
+        return companyMapper.selectList(null);
     }
 }

@@ -2,6 +2,7 @@ package com.demo.employee.base;
 
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * 基础service类，抽象出公共的增删改查方法
@@ -15,4 +16,6 @@ public interface IService<T> {
     int updateById(T entity);
 
     T getById(Integer id);
+
+    List<T> getList();
 }

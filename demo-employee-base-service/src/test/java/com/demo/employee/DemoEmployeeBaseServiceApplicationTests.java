@@ -19,9 +19,9 @@ class DemoEmployeeBaseServiceApplicationTests {
 
     @Test
     void save() {
-        CompanyEntity companyEntity = CompanyEntity.builder().code("sitir").name("四特酒")
-                .category(CompanyCategoryTypeEnum.GROUP.getValue()).build();
-        companyService.save(companyEntity);
+//        CompanyEntity companyEntity = CompanyEntity.builder().code("sitir").name("四特酒")
+//                .category(CompanyCategoryTypeEnum.GROUP.getValue()).build();
+//        companyService.save(companyEntity);
     }
 
     @Test

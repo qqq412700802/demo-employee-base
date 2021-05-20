@@ -17,6 +17,7 @@ import java.util.List;
  * @since 2021-05-13
  */
 @AllArgsConstructor
+@RestController
 public class CompanyServiceImpl implements CompanyService {
 
     private CompanyMapper companyMapper;

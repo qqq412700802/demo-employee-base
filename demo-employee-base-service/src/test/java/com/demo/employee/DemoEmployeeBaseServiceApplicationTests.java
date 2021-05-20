@@ -15,7 +15,7 @@ class DemoEmployeeBaseServiceApplicationTests {
     }
 
     @Autowired
-    private CompanyService<CompanyEntity> companyService;
+    private CompanyService companyService;
 
     @Test
     void save() {

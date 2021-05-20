@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @Transactional
 class CompanyServiceImplTest {
     @Autowired
-    private CompanyService<CompanyEntity> companyService;
+    private CompanyService companyService;
 
     @Test
     void save() {

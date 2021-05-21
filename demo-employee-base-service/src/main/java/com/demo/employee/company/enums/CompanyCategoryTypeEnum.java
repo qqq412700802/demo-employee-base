@@ -19,46 +19,42 @@ public enum CompanyCategoryTypeEnum {
      */
     SUBSIDIARY("子公司", 3);
 
-    /** 描述*/
+    /**
+     * 描述
+     */
     private String desc;
-    /** 枚举值*/
+    /**
+     * 枚举值
+     */
     private int value;
 
-    private CompanyCategoryTypeEnum(String desc, int value)
-    {
+    private CompanyCategoryTypeEnum(String desc, int value) {
         this.desc = desc;
         this.value = value;
     }
 
-    public int getValue()
-    {
+    public int getValue() {
         return value;
     }
 
-    public void setValue(int value)
-    {
+    public void setValue(int value) {
         this.value = value;
     }
 
-    public String getDesc()
-    {
+    public String getDesc() {
         return desc;
     }
 
-    public void setDesc(String desc)
-    {
+    public void setDesc(String desc) {
         this.desc = desc;
     }
 
-    public static CompanyCategoryTypeEnum getEnum(int value)
-    {
+    public static CompanyCategoryTypeEnum getEnum(int value) {
         CompanyCategoryTypeEnum resultEnum = null;
         CompanyCategoryTypeEnum[] enumAry = CompanyCategoryTypeEnum.values();
 
-        for (int i = 0; i < enumAry.length; i++)
-        {
-            if (enumAry[i].getValue() == value)
-            {
+        for (int i = 0; i < enumAry.length; i++) {
+            if (enumAry[i].getValue() == value) {
                 resultEnum = enumAry[i];
                 break;
             }
@@ -67,13 +63,11 @@ public enum CompanyCategoryTypeEnum {
         return resultEnum;
     }
 
-    public static Map<String, Map<String, Object>> toMap()
-    {
+    public static Map<String, Map<String, Object>> toMap() {
         CompanyCategoryTypeEnum[] ary = CompanyCategoryTypeEnum.values();
         Map<String, Map<String, Object>> enumMap = new HashMap<String, Map<String, Object>>();
 
-        for (int num = 0; num < ary.length; num++)
-        {
+        for (int num = 0; num < ary.length; num++) {
             Map<String, Object> map = new HashMap<String, Object>();
             String key = String.valueOf(getEnum(ary[num].getValue()));
             map.put("desc", ary[num].getDesc());
@@ -85,13 +79,11 @@ public enum CompanyCategoryTypeEnum {
         return enumMap;
     }
 
-    public static List<Map<String, Object>> toList()
-    {
+    public static List<Map<String, Object>> toList() {
         CompanyCategoryTypeEnum[] ary = CompanyCategoryTypeEnum.values();
         List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 
-        for (int i = 0; i < ary.length; i++)
-        {
+        for (int i = 0; i < ary.length; i++) {
             Map<String, Object> map = new HashMap<String, Object>();
             map.put("desc", ary[i].getDesc());
             map.put("value", ary[i].getValue());

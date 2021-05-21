@@ -23,7 +23,7 @@ public class CompanyServiceImpl implements CompanyService {
     private CompanyMapper companyMapper;
 
     @Override
-    public int save(CompanyEntity entity) {
+    public int save(@RequestBody CompanyEntity entity) {
         companyMapper.insert(entity);
         return entity.getId();
     }
@@ -34,7 +34,7 @@ public class CompanyServiceImpl implements CompanyService {
     }
 
     @Override
-    public int updateById(@RequestBody  CompanyEntity entity) {
+    public int updateById(@RequestBody CompanyEntity entity) {
         return companyMapper.updateById(entity);
     }
 

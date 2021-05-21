@@ -24,7 +24,7 @@
         <module>demo-employee-base-domain</module>
         <module>demo-employee-base-service</module>
     </modules>
-    
+
     <dependencyManagement>
         <dependencies>
             <dependency>

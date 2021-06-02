@@ -1,10 +1,10 @@
 package com.demo.employee.company.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.Builder;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableField;
+import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -17,7 +17,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author lixj
- * @since 2021-05-13
+ * @since 2021-06-02
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -55,7 +55,13 @@ public class CompanyEntity implements Serializable {
     private Integer category;
 
     /**
-     * 备注 备注	
+     * 状态 1-未启用，2-已	启用，3-已停用
+     */
+    @TableField("STATUS")
+    private Integer status;
+
+    /**
+     * 备注 备注
      */
     private String note;
 
@@ -70,9 +76,9 @@ public class CompanyEntity implements Serializable {
     private Integer createTime;
 
     /**
-     * 成立日期 成立日期
+     * 成立日期	成立日期
      */
-    private Integer foundDate;
+    private String foundDate;
 
     /**
      * 版本号 版本号

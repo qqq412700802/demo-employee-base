@@ -3,7 +3,13 @@ package com.demo.employee.company.service;
 import com.demo.employee.company.entity.CompanyEntity;
 import com.demo.employee.company.mapper.CompanyMapper;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.*;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.io.Serializable;
 import java.util.List;
@@ -18,6 +24,7 @@ import java.util.List;
  */
 @AllArgsConstructor
 @RestController
+@Slf4j
 public class CompanyServiceImpl implements CompanyService {
 
     private CompanyMapper companyMapper;

@@ -13,11 +13,3 @@ spring:
         prefer-ip-address: true
         heartbeat: http://${spring.cloud.client.ip-address}:${server.port}/actuator/health
         instance-id: ${spring.application.name}-${spring.cloud.client.ip-address}
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-  endpoint:
-    health:
-      show-details: always
